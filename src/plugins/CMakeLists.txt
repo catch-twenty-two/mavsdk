@@ -5,7 +5,7 @@ include_directories(
 
 add_subdirectory(action)
 add_subdirectory(calibration)
-add_subdirectory(camera)
+#add_subdirectory(camera)
 add_subdirectory(follow_me)
 add_subdirectory(gimbal)
 add_subdirectory(info)

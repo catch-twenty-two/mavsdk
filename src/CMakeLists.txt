@@ -23,7 +23,7 @@ if(CCACHE AND CCACHE_PROGRAM AND NOT DEFINED ENV{CCACHE_DISABLE})
     endif()
 endif()
 
-option(BUILD_TESTS "Build tests" ON)
+#option(BUILD_TESTS "Build tests" ON)
 option(CMAKE_POSITION_INDEPENDENT_CODE "Position independent code" ON)
 
 include(cmake/compiler_flags.cmake)
@@ -31,7 +31,7 @@ include(cmake/compiler_flags.cmake)
 find_package(CURL REQUIRED CONFIG)
 find_package(tinyxml2 REQUIRED)
 
-if(NOT MSVC AND NOT MINGW)
+if(NOT MSVC AND NOT MINGW AND NOT YOCTO)
     cmake_policy(SET CMP0058 NEW)
     include(${CMAKE_CURRENT_SOURCE_DIR}/third_party/cpp_rsc/cmake/modules/cpp_resource.cmake)
     if(NOT ANDROID AND NOT IOS)
